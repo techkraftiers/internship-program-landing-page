@@ -195,4 +195,38 @@ scrollBtn.addEventListener("click", () => {
   });
 });
 
+// form validation
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    let isValid = true;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+
+    // 1. Check Phone Format (Simple 10-digit check)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        isValid = false;
+    }
+
+    // If any check fails, stop the form from submitting/storing
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
+document.getElementById('heroForm').addEventListener('submit', function(event) {
+    let isValid = true;
+    const heroPhone = document.getElementById('heroPhone').value;
+    const heroEmail = document.getElementById('heroEmail').value;
+
+    // 1. Check Phone Format (Simple 10-digit check)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(heroPhone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        isValid = false;
+    }
+
+    // If any check fails, stop the form from submitting/storing
+    if (!isValid) {
+        event.preventDefault();
+    }
 
